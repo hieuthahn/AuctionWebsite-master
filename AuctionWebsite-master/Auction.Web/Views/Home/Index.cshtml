@@ -1,0 +1,43 @@
+﻿@model Auction.Web.ViewsModels.AuctionsListingViewModels
+
+@{
+    var categoryID = Model.CategoryID.HasValue ? Model.CategoryID.Value : 0;
+
+}
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Welcome to Auction Website</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Have a good day!</p>
+        </div>
+    </div>
+</header>
+
+@*<form method="post" class="d-flex align-items-center justify-content-end">
+    <div>
+        <select class="custom-select form-control" name="categoryID">
+            <option selected>Select Category</option>
+            @foreach (var category in Model.Categories)
+            {
+                var selected = category.ID == categoryID ? "selected" : string.Empty;
+                <option value="@category.ID" @selected>@category.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        <div class="p-2 pe-3">
+            <nav class="navbar navbar-light">
+                <div class="form-inline d-flex align-items-center">
+                    <input class="form-control mr-sm-2" name="searchTerm" value="@Model.SearchTerm" type="search" placeholder="Search" aria-label="Search" style="min-width:300px">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</form>*@
+
+<div id="listingArea">
+    @{Html.RenderAction("Listing");}
+</div>

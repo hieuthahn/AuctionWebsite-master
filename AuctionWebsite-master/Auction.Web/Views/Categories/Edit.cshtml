@@ -1,0 +1,39 @@
+﻿@model Auction.Web.ViewsModels.CategoryViewModels
+
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Edit Category</h4>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form id="editForm" method="post">
+    <div class="modal-body">
+        <input type="hidden" name="ID" value="@Model.ID" />
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" name="Name" value="@Model.Name" class="form-control" id="exampleInputEmail1" placeholder="Name">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="exampleInputEmail1">Description</label>
+            <input type="text" class="form-control" value="@Model.Description" name="Description" id="exampleInputEmail1" placeholder="Description">
+        </div>
+    </div>
+    <div class="modal-footer mb-3">
+        <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="saveButton">Save</button>
+    </div>
+</form>
+
+<script>
+
+    $("#saveButton").click(function () {
+        $.ajax({
+            url: "@Url.Action("Edit", "Categories")",
+            method: "post",
+            data: $("#editForm").serialize()
+        }).done(function (response) {
+            $("#listingArea").html(response);
+            $('#formModal').modal('toggle');
+        });
+    });
+
+</script>
