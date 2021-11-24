@@ -21,24 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link btnLogOut" id="btnLogOut" href="#">Logout</a>
                     </li>
-
-                    //Yêu cầu lúc thi, chưa xong
-                    @*{ HttpCookie _userInfo = Request.Cookies["UserInfo"];
-                        if (_userInfo != null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link " id="#" href="#">Số lần login: @_userInfo["LoginCount"]</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " id="#" href="#">Thời gian login: @_userInfo["LoginTime"]</a>
-                            </li>
-                        }
-                    }*@
-
-
-                        }
-                        else
-                        {
+                }
+                else
+                {
                     <li class="nav-item">
                         <a class="nav-link" href="@Url.Action("Login", "Account")">Login</a>
                     </li>

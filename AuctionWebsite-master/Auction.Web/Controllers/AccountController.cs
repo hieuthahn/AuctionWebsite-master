@@ -85,12 +85,6 @@ namespace Auction.Web.Controllers
             {
                 case SignInStatus.Success:
                     {
-                        //HttpCookie _userInfoCookies = new HttpCookie("UserInfo");
-                        //pageModel.LoginCount = pageModel.LoginCount + 1;
-                        //_userInfoCookies["LoginCount"] = pageModel.LoginCount.ToString();
-                        //pageModel.LoginTime = DateTime.Now;
-                        //_userInfoCookies["LoginTime"] = model.LoginTime.ToString();
-                        //Response.Cookies.Add(_userInfoCookies);
                         return RedirectToLocal(returnUrl);
                     }
                 case SignInStatus.LockedOut:
